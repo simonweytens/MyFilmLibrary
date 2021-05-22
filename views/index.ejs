@@ -1,0 +1,19 @@
+<div >
+    <div >
+        <h2>Recently Added</h2>
+    </div>
+</div>
+<div >  
+    <div>
+    <% movies.forEach(movie => { %>
+        <div class="row">
+        <a href="movies/<%= movie.id %>">
+            <div class="image">
+                <img src="<%= movie.coverImagePath %>">
+            </div>
+        </div>
+        </a>
+    <% }) %>
+    </div>
+  </div>
+  

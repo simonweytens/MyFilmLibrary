@@ -1,0 +1,15 @@
+<h2>Search Actors</h2>
+<form action="/directors" method="GET">
+  <label>Name</label>
+  <input type="text" name="name" value="<%= searchOptions.name %>">
+  <button type="submit" class="material-icons">search</button>
+</form>
+<br>
+<% actors.forEach(actor => { %>
+  <div><%= actor.name %></div>
+  <div class="list-view">
+  <a href="/actors/<%= actor.id %> ">View</a>
+  <a href="/actors/<%= actor.id %>/edit ">Edit</a>
+  <%- include('../partials/deleteForm', {url: `/actors/${actor.id}`}) %> 
+  </div>
+  <% }) %> 

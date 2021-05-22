@@ -1,0 +1,15 @@
+<h2><%= movie.title %></h2>
+<img width="150" height="auto" src="<%= movie.coverImagePath %>">
+
+<div>Director: <%= movie.director.name %></div>
+<div>Lead Actor: <%= movie.actor.name %> </div>
+<div>Realease Date: <%= movie.publishDate.toDateString() %></div>
+<div>Lenght In Minutes <%= movie.minutes %></div>
+<div>Description: <div><%= movie.description %></div></div>
+
+<a href="/movies/<%= movie.id %>/edit">Edit</a>
+<%- include('../partials/deleteForm', { url: `/movies/${movie.id}` }) %>
+<form>
+<a href="/directors/<%= movie.director.id %>">View Director</a>
+<a href="/actors/<%= movie.actor.id %>">View Lead Actor</a>
+</form>

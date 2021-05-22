@@ -1,0 +1,16 @@
+<h2><%= director.name %></h2>
+<form>
+<a href="/directors/<%= director.id %>/edit">Edit</a>
+<%- include('../partials/deleteForm',
+            { url: `/directors/${director.id}` }) %>
+<% if (moviesByDirector.length > 0) { %>
+  <h2>Movies By Director</h2>
+  <% moviesByDirector.forEach(movie => { %>
+    <div class="image">
+    <a href="/movies/<%= movie.id%>">
+      <img height="200" width="auto" src="<%= movie.coverImagePath %>">
+    </a>
+  </div>
+  <% }) %>
+<% } %> 
+</form>
